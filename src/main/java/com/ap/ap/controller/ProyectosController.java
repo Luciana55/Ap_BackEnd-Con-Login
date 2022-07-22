@@ -4,6 +4,7 @@ import com.ap.ap.entity.Proyectos;
 import com.ap.ap.service.ProyectosService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,16 +29,19 @@ public class ProyectosController {
         Proyectos proyectos = proyectosService.findProyectosById(id);
         return new ResponseEntity<>(proyectos, HttpStatus.OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public ResponseEntity<Proyectos> addProyectos(@RequestBody Proyectos proyectos){
         Proyectos newProyectos= proyectosService.addProyectos(proyectos);
         return new ResponseEntity<>(newProyectos, HttpStatus.CREATED);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<Proyectos> updateProyectos(@RequestBody Proyectos proyectos) {
         Proyectos updateProyectos = proyectosService.updateProyectos(proyectos);
         return new ResponseEntity<>(proyectos, HttpStatus.OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteProyectos(@PathVariable("id") Long id) {
         proyectosService.deleteProyectos(id);
