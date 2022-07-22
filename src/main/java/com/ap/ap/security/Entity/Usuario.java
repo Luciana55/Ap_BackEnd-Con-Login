@@ -1,6 +1,6 @@
 package com.ap.ap.security.Entity;
 
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -27,12 +27,12 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nombre, String nombreUsuario, String email, String password, Set<Rol> roles) {
+    public Usuario(String nombre, String nombreUsuario, String email, String password) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
-        this.roles = roles;
+
     }
 
     public int getId() {
