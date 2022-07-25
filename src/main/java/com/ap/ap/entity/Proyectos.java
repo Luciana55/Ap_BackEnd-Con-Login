@@ -15,7 +15,7 @@ import javax.persistence.Column;
 @Entity
 public class Proyectos implements Serializable{
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (nullable = false, updatable = false)
     private Long id;
     private String nombreProyecto;

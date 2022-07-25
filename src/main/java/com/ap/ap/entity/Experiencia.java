@@ -15,7 +15,7 @@ import javax.persistence.Column;
 @Entity
 public class Experiencia implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Long id;
     private String posicion;
