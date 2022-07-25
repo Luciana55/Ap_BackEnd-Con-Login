@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/persona")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://luciana-ap.web.app")
 public class PersonaController {
     private final PersonaService personaService;
 
